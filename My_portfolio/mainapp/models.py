@@ -7,6 +7,7 @@ class Project(models.Model):
 	url_repository = models.URLField(max_length=500, help_text="Ссылка на репозиторий проекта", verbose_name="Ссылка на репозиторий проекта")
 	description = models.TextField(help_text="Описание проекта", verbose_name="Описание проекта")
 	created = models.DateTimeField(auto_now_add=True)
+	status = models.BooleanField(default=True, help_text="Опубликовать проект?", verbose_name="Статус проекта")
 
 	class Meta:
 		ordering = ('created', )
